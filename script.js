@@ -48,6 +48,18 @@ inquirer
     },
     {
         type: "input",
+        message: "Please outline the contribution guidelines for someone to collaborate in this project.",
+        name: "guidelines",
+        
+    },
+    {
+        type: "input",
+        message: "Please outline the test instructions for your application.",
+        name: "test",
+        
+    },
+    {
+        type: "input",
         message: "What technologies were used for this application?",
         name: "technologies",
         
@@ -84,7 +96,7 @@ inquirer
     },
     {
         type: "list",
-        message: "What is your preferred method of communication?",
+        message: "How do you prefer to be contacted?",
         name: "communication",
         choices: [
             "Email",
@@ -94,20 +106,44 @@ inquirer
     ])
     .then((response) => {
     let buildreadme = 
-    `#**${response.Title}**
+    `#${response.Title}
+    [![License: ${response.license}]
+
+    ##Table of Contents
+        1. [Description](#description)
+        2. [Installation](#installation)
+        3. [Usage](#usage)
+        4. [Collaborators](#collaborators)
+        5. [Contribution Guidelines](#contribution-guidelines)
+        6. [Tests](#tests)
+        7. [Technologies](#technologies)
+        8. [Questions](#questions)
+        9. [Contact info](#contact-info)
+        10. [License](#license)
     ##Description
         ${response.description}
-        ${response.motivation}
-        ${response.problem}
+        The motivation behind this application is ${response.motivation}
+        The problem this application solves is ${response.problem}
     ##Installation
         ${response.installation}
     ##Usage
         ${response.usage}
     ##Collaborators
         ${response.collaborators}
+    ###Contribution guidelines
+        ${response.guidelines}
+    ##Tests
+        ${response.test}
     ##Technologies
         ${response.technologies}
-       `
+    ##Questions
+        ${response.questions}
+    ###Contact info
+        Please feel free to contact me via ${response.communication}.
+        ${response.github}
+        ${response.email}
+    #License
+        ${response.license}`
    
     fs.writeFile('README.md', buildreadme, (err) => {
         err ? console.error(err) : console.log('Success!')
