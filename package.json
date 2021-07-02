@@ -1,0 +1,23 @@
+{
+  "name": "README-generator",
+  "version": "1.0.0",
+  "description": "The objective of this command-line application is to generate a professional README for the user.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pazjenni04/README-generator.git"
+  },
+  "keywords": [],
+  "author": "Jennifer Davila",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pazjenni04/README-generator/issues"
+  },
+  "homepage": "https://github.com/pazjenni04/README-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.1"
+  }
+}
