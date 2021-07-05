@@ -70,35 +70,30 @@ inquirer
             "Zlib/libpng License",
             "IBM Publice License Version 1.0",
             "Apache 2.0 License"
-        ]
+        ],
+        validate: (value) =>{if (value){return true} else{return 'Please choose a licensing to continue.'}},
     },
     {
         type: "input",
         message: "What are some frequently asked questions that could assist the user with your application?",
         name: "questions",
+        validate: (value) =>{if (value){return true} else{return 'Please provide a list of FAQs to continue.'}},
         
     },
     {
         type: "input",
         message: "What is your Github URL?",
         name: "github",
+        validate: (value) =>{if (value){return true} else{return 'Please provide a Github URL to continue.'}},
         
     },
     {
         type: "input",
         message: "What is your email address?",
         name: "email",
+        validate: (value) =>{if (value){return true} else{return 'Please provide an email address to continue.'}},
         
     },
-    {
-        type: "list",
-        message: "How do you prefer to be contacted?",
-        name: "communication",
-        choices: [
-            "Email",
-            "Github",
-        ]
-    }
     ])
     .then(({
         Title,
@@ -116,43 +111,53 @@ inquirer
         communication,
     }) => {
 
-    const buildreadme = 
-    `# ${Title}
-    [![License: ${license}]]
+const buildreadme = 
+`# ${Title}
+[![License: ${license}]]
 
-    ## Table of Contents
-        1. [Description](#description)
-        2. [Installation](#installation)
-        3. [Usage](#usage)
-        4. [Collaborators](#collaborators)
-        5. [Contribution Guidelines](#contribution-guidelines)
-        6. [Tests](#tests)
-        7. [Technologies](#technologies)
-        8. [Questions](#questions)
-        9. [Contact info](#contact-info)
-        10. [License](#license)
-    ## Description
-        ${description}
-    ## Installation
-        ${installation}
-    ## Usage
-        ${usage}
-    ## Collaborators
-        ${collaborators}
-    ### Contribution guidelines
-        ${guidelines}
-    ## Tests
-        ${test}
-    ## Technologies
-        ${technologies}
-    ## Questions
-        ${questions}
-    ### Contact info
-        Please feel free to contact me via ${communication}.
-        * Gtihub: ${github}
-        * Email: ${email}
-    # License
-        ${license}`
+## Table of Contents
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Collaborators](#collaborators)
+5. [Contribution Guidelines](#contribution-guidelines)
+6. [Tests](#tests)
+7. [Technologies](#technologies)
+8. [Questions](#questions)
+9. [Contact info](#contact-info)
+10. [License](#license)
+
+## Description
+${description}
+
+## Installation
+${installation}
+
+## Usage
+${usage}
+
+## Collaborators
+${collaborators}
+
+### Contribution guidelines
+${guidelines}
+
+## Tests
+${test}
+
+## Technologies
+${technologies}
+
+## Questions
+${questions}
+
+### Contact info
+Please feel free to contact me via ${communication}.
+* [Gtihub]${github}
+* [Email]${email}
+
+# License
+${license}`
    
    
     createNewFile(Title, buildreadme);
