@@ -97,10 +97,8 @@ inquirer
         test,
         technologies,
         license,
-        questions,
         github,
         email,
-        communication,
     }) => {
 
 const buildreadme = 
