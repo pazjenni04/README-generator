@@ -12,7 +12,17 @@
 The objective of this application is to create a professional readme for the user.
 
 ## **Usage**
-To use this application, the user first needs to type in node script.js in their terminal in visual studio code.  Once the user presses enter, they will then be prompted with the first question. 
+To use this application, the user first needs to git clone https://github.com/pazjenni04/README-generator.git into their terminal.  Once they have cloned the repo, the user then needs to install the inquirer package by first typing in 
+
+```npm init -y```
+
+and then typing in
+
+```npm i inquirer```
+
+This will then download the inquirer package and create a package.json and a package-lock.json.
+
+Once the inquirer package has been downloaded, then the user will need to open a 'New Terminal' in their visual studio code and type in node script.js.  Once the user presses enter, they will then be prompted with the first question. 
 
 ![This image is a screenshot of the first question the user is prompted](https://raw.githubusercontent.com/pazjenni04/README-generator/main/images/first-question_image.PNG).  
 
@@ -20,7 +30,7 @@ Once the user responds to the question, they will then be prompted with the next
 
 ![This image is an example of the message the user is prompted with if they attempt to proceed without responding to the question](https://raw.githubusercontent.com/pazjenni04/README-generator/main/images/missed-response_image.PNG).  
 
-Once the user answers all the questions, then a "Success!" message will be prompted within the terminal a new readme file will be created.
+Once the user answers all the questions, then a "Success!" message will be prompted within the terminal a new readme file will then be created.
 
 ## **Technologies**
 * JavaScript, node.js, and inquirer package
