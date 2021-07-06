@@ -112,8 +112,7 @@ ${license}
 6. [Tests](#tests)
 7. [Technologies](#technologies)
 8. [Questions](#questions)
-9. [Contact info](#contact-info)
-10. [License](#license)
+9. [License](#license)
 
 ## **Description**
 ${description}
