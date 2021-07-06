@@ -1,6 +1,5 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const { fileURLToPath } = require('url');
 
 
 inquirer 
@@ -66,12 +65,11 @@ inquirer
         name: "license",
         choices: [
             "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+            "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)",
             "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)",
             "[![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)](https://opensource.org/licenses/Zlib)",
-            "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)",
         ],
-        validate: (value) =>{if (value){return true} else{return 'Please choose a licensing to continue.'}},
-    },
+},
     {
         type: "input",
         message: "What is your Github URL?",
@@ -86,7 +84,7 @@ inquirer
         validate: (value) =>{if (value){return true} else{return 'Please provide an email address to continue.'}},
         
     },
-    ])
+])
     .then(({
         Title,
         description,
